@@ -2,20 +2,18 @@ programa
 {
 	//Game jokenpo com algumas fuincionalidades aprimoradas
 	//Cada etapa das modificacoes serao salvas da branch funcionalities no Git
-
+	
+		real version = 1.0
+		inteiro player1
+		inteiro player2
+	
 	funcao header() {
 		escreva ("\n---------")
-		escreva ("\nJO-KEN-PO")
+		escreva ("\nJO-KEN-PO ",version)
 		escreva ("\n---------\n")
 	}
 	
 	funcao inicio() {
-		//Variaveis
-
-		inteiro player1
-		inteiro player2
-
-		//Comandos
 
 		header()
 
@@ -48,7 +46,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 267; 
+ * @POSICAO-CURSOR = 337; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
