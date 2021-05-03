@@ -4,18 +4,18 @@ programa
 		//Cada etapa das modificacoes devem ser salvas da branch funcionalities no Git
 	
 		real version = 1.0
-		inteiro player1 = 0
-		inteiro player2 = 0
-	
+		inteiro player1 = 0 //Recebe a referencia de jogada
+		inteiro player2 = 0 //Recebe a referencia de jogada
+		cadeia jogador
 	funcao header() {
 		escreva ("\n---------")
 		escreva ("\nJO-KEN-PO ",version)
 		escreva ("\n---------\n")
 	}
 
-	funcao leituraDaJogada(inteiro &jogada) { ////Todas as variaveis inteiro recebem a passagem de paramentro por referencia de jogada?
+	funcao leituraDaJogada(inteiro &jogada) {//Todas as variaveis inteiro do escopo global recebem a passagem de paramentro por referencia de jogada
 		header()
-		cadeia jogador
+		
 		escreva ("Digite seu nome: ")
 		leia (jogador)
 		escreva ("Faca sua jogada ",jogador,"\n")
@@ -29,6 +29,11 @@ programa
 		retorne (player1==1 e player2==3) ou (player1==2 e player2==1) ou (player1==3 e player2==2) 
 	}
 
+	funcao cadeia nomeDoVencedor(inteiro &jogada) {
+
+		retorne (jogador)
+	}
+
 	//CENTRALIZACAO DO PROGRAMA
 	funcao inicio() {
 		
@@ -38,14 +43,14 @@ programa
 		header()
 		logico resultado = calculoDeVitoria()
 		se (resultado) {
-			escreva ("VOCE GANHOU!") //Quem ganhou?
+			escreva ("VOCE GANHOU! ",jogador) //O calculo de vitoria esta baseado nas probabilidades de ganho do player 1, se o player1 ganha o 2 perde e vice e versa
 		}
 		senao
 			se (player1 == player2){ 
 			escreva ("EMPATE!")
 			}
 			senao {
-				escreva ("VOCE PERDEU!") //Quem perdeu?
+				escreva ("VOCE GANHOU! ",player2) //Quem perdeu?
 			}
 	}
 }
@@ -54,7 +59,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1380; 
+ * @POSICAO-CURSOR = 1641; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
